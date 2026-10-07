@@ -42,7 +42,7 @@
               name = projectName;
               inherit version;
 
-              vendorHash = lib.fakeHash;
+              vendorHash = "sha256-SfgLkQ3FkAC1APryufMDXoodoRyWtzYQObuKMSqrMJ8=";
 
               ldflags = [
               ]
