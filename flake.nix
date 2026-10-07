@@ -51,10 +51,6 @@
                 "-w"
               ];
 
-              # If checks require network access, they need to be disabled. You dont need to disable all checks though!
-              excludedPackages = [ ];
-              doCheck = true;
-
               meta = with lib; {
                 description = "Kubernetes Admission Policy Toolkit";
                 homepage = "https://github.com/cenroq/kubeapt";
@@ -63,14 +59,9 @@
               };
             };
 
-          pkgsPackages = with pkgs; [
-            # FIXME: add pkgs packages here
+          packages = with pkgs; [
             go
           ];
-          packages = [
-            # FIXME: add packages you defined here
-          ]
-          ++ pkgsPackages;
 
           # These packages are only used as development tools - they are not required for building your packages
           devPackages = [
