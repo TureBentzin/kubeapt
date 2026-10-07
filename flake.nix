@@ -1,5 +1,5 @@
 {
-  description = "Description for the project";
+  description = "Flake around kubeapt";
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -9,7 +9,7 @@
   outputs =
     inputs@{ flake-parts, ... }:
     let
-      projectName = "BasicShell"; # FIXME: Name of the software / product bundled here
+      projectName = "kubeapt";
       version = "1.0.0"; # FIXME: Version strategy
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -55,7 +55,12 @@
               excludedPackages = [ ];
               doCheck = true;
 
-              meta = { };
+              meta = with lib; {
+                description = "Kubernetes Admission Policy Toolkit";
+                homepage = "https://github.com/cenroq/kubeapt";
+                license = licenses.asl20;
+                mainProgram = projectName;
+              };
             };
 
           pkgsPackages = with pkgs; [
