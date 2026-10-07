@@ -10,7 +10,7 @@
     inputs@{ flake-parts, ... }:
     let
       projectName = "kubeapt";
-      version = "1.0.0"; # FIXME: Version strategy
+      version = "2.1.0";
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
